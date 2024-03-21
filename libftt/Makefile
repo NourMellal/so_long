@@ -61,8 +61,10 @@ NAME = libft.a
 all : ${NAME}
 
 ${NAME}: ${OBJS}
-		
+		${AR} ${NAME} ${OBJS}
+
 bonus: ${OBJS_BONUS}
+	${AR} ${NAME} ${OBJS_BONUS}
 
 clean:
 	rm -rf ${OBJS} ${OBJS_BONUS}
@@ -72,7 +74,6 @@ fclean: clean
 
 re: fclean all
 
-%.o: %.c
+$(OBJS_BONUS): %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-	${AR} ${NAME} $@
 
