@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/21 19:32:38 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/21 20:51:41 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	check_edges(t_data *data)
 			last_and_first_line(tmp[i]);
 		else
 			inner_lines(tmp[i]);
+		i++;
 	}
 }
 
