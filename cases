@@ -1,0 +1,7 @@
+player and exit have to be 1
+lines same length
+no new line in file
+map wiht 3 lines at least
+at least 1 coin
+map surounded by wall
+nothing else except [p,e, 0, 1, c, m]
