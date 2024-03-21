@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/21 02:35:55 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/21 19:32:22 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,7 @@ int		check_line(t_data *data, char *s);
 void	get_line(t_data *data);
 void	collect_data(t_data	*data, char byte);
 void	check_data(t_data *data);
-
+void	last_and_first_line(char *str);
+void	inner_lines(char *str);
+void	check_edges(t_data *data);
 #endif

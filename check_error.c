@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/21 03:00:05 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/21 19:32:38 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,49 +48,23 @@ void	check_data(t_data *data)
 	else if (data->coins < 1)
 		print_err("Invalid amount of Coins");
 	check_edges(data);
-
 }
+
 void	check_edges(t_data *data)
 {
 	char	**tmp;
 	int		i;
 	int		j;
-	int		flag;
 
 	tmp = data->pars.map_str;
 	i = 0;
-	flag = 0;
 	while (tmp[i])
 	{
 		j = 0;
-		if (!flag || i == count_strs(tmp) - 1)
-		{
-			while (tmp[i][j])
-			{
-				if (tmp[i][j] != '1')
-				{
-					print_err("Invalid map");
-					flag = 1;
-				}
-				j++;
-			}
-		}
+		if (i == count_strs(tmp) - 1 || i == 0)
+			last_and_first_line(tmp[i]);
 		else
-		{
-			if (tmp[i][0] != '1' || tmp[i][ft_strlen(tmp[i]) - 1] != '1')
-				print_err("Invalid map");
-		}
-		{
-			while (tmp[i][j])
-			{
-				if (tmp[i][j] != '1')
-				{
-					print_err("Invalid map");
-					flag = 1;
-				}
-				j++;
-			}
-		}
+			inner_lines(tmp[i]);
 	}
 }
 
