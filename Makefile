@@ -14,9 +14,9 @@ NAME = so_long
 SRCS = main.c \
 		get_next_line.c \
 		get_next_line_utils.c \
-		parsing.c \
+		so_long_parsing.c \
 		so_long_utils.c \
-		check_error.c
+		so_long_check_error.c so_long_utils2.c
 
 # Define objects for all source files
 OBJS = $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 03:30:28 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/22 16:41:03 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,6 @@ void	check_data(t_data *data);
 void	last_and_first_line(char *str, t_data *data);
 void	inner_lines(char *str, t_data *data);
 void	check_edges(t_data *data);
+void	find_player_pos(t_data *data);
+
 #endif
