@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/21 20:51:41 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/22 03:31:05 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ int	check_path(char *str)
 void	check_data(t_data *data)
 {
 	if (data->players != 1)
-		print_err("Invalid amount of Players");
+		print_err("Invalid amount of Players", data);
 	else if (data->exits != 1)
-		print_err("Invalid amount of exits");
+		print_err("Invalid amount of exits", data);
 	else if (data->coins < 1)
-		print_err("Invalid amount of Coins");
+		print_err("Invalid amount of Coins", data);
 	check_edges(data);
 }
 
@@ -54,23 +54,35 @@ void	check_edges(t_data *data)
 {
 	char	**tmp;
 	int		i;
-	int		j;
 
 	tmp = data->pars.map_str;
 	i = 0;
 	while (tmp[i])
 	{
-		j = 0;
 		if (i == count_strs(tmp) - 1 || i == 0)
-			last_and_first_line(tmp[i]);
+			last_and_first_line(tmp[i], data);
 		else
-			inner_lines(tmp[i]);
+			inner_lines(tmp[i], data);
 		i++;
 	}
 }
 
-void	print_err(char *err_type)
+void	print_err(char *err_type, t_data *data)
 {
+	int i;
+
+	i = 0;
+	if (data->pars.filecontent)
+		free(data->pars.filecontent);
+	if (data->pars.map_str)
+	{
+		while (data->pars.map_str[i])
+		{
+			free(data->pars.map_str[i]);
+			i++;
+		}
+		free(data->pars.map_str);
+	}
 	ft_putendl_fd(err_type, 2);
 	exit(1);
 }

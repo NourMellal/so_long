@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/21 19:32:22 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/22 03:30:28 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,19 @@ typedef struct s_data
 	int exits;
 }		t_data;
 
+void	define_data(t_data *data);
 int		check_path(char *str);
 void	start_parsing(char *path, t_data *data);
 void	check_if_valid_map(t_data *data);
 void	check_for_err(int ac, char **av);
 void	print_error_file(void);
-void	print_err(char *err_type);
+void	print_err(char *err_type, t_data *data);
 int		count_strs(char **strs);
 int		check_line(t_data *data, char *s);
 void	get_line(t_data *data);
 void	collect_data(t_data	*data, char byte);
 void	check_data(t_data *data);
-void	last_and_first_line(char *str);
-void	inner_lines(char *str);
+void	last_and_first_line(char *str, t_data *data);
+void	inner_lines(char *str, t_data *data);
 void	check_edges(t_data *data);
 #endif

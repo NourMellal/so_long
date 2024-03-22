@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Define the directory containing the libft library
-LIBFT_DIR = libft
+LIBFT_DIR = ./libft
 
 # Define the name of the executable
 NAME = so_long
@@ -43,3 +43,4 @@ re: fclean all
 
 # Tell make that these are not actually files, but targets
 .PHONY: all clean fclean re
+.SECONDARY: $(OBJS)

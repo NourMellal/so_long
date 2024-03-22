@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 23:39:00 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/21 19:32:54 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/22 03:29:44 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	check_line(t_data *data, char *s)
 		i++;
 	return (i);
 }
-void	last_and_first_line(char *str)
+void	last_and_first_line(char *str, t_data *data)
 {
 	int	i;
 
@@ -51,24 +51,24 @@ void	last_and_first_line(char *str)
 	while (str[i])
 	{
 		if (str[i] != '1')
-			print_err("Invalid map");
+			print_err("Invalid map", data);
 		i++;
 	}
 }
-void	inner_lines(char *str)
+void	inner_lines(char *str, t_data *data)
 {
 	int	i;
 
 	i = 0;
 	if (str[i] != '1')
-		print_err("Invalid map");
+		print_err("Invalid map", data);
 	i++;
 	while (str[i])
 	{
 		if (str[i] != '0' && str[i] != '1' && str[i] != 'P' && str[i] != 'C' && str[i] != 'E')
-			print_err("Invalid map");
+			print_err("Invalid map", data);
 		i++;
 	}
 	if (str[i - 1] != '1')
-		print_err("Invalid map");
+		print_err("Invalid map", data);
 }

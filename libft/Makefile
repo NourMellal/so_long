@@ -52,7 +52,7 @@ AR = ar rcs
 
 CC =	cc
 
-ICNLUDES = libft.h
+ICNLUDES = ./libft/libft.h
 
 CFLAGS =	-Wall -Werror -Wextra -I ${ICNLUDES}
 
