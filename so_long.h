@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 16:41:03 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/22 17:33:24 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef	struct s_pars
 	int line_count;
 	char *filecontent;
 	char **map_str;
+	char **map_copy;
 }				t_pars;
 
 typedef struct s_data

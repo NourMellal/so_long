@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_error.c                                      :+:      :+:    :+:   */
+/*   so_long_check_error.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 03:31:05 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/22 17:50:35 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ int	check_path(char *str)
 
 void	check_data(t_data *data)
 {
+	check_edges(data);
 	if (data->players != 1)
 		print_err("Invalid amount of Players", data);
 	else if (data->exits != 1)
 		print_err("Invalid amount of exits", data);
 	else if (data->coins < 1)
 		print_err("Invalid amount of Coins", data);
-	check_edges(data);
 }
 
 void	check_edges(t_data *data)
@@ -65,6 +65,7 @@ void	check_edges(t_data *data)
 			inner_lines(tmp[i], data);
 		i++;
 	}
+	data->pars.map_copy = data->pars.map_str;
 }
 
 void	print_err(char *err_type, t_data *data)

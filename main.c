@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:11 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 03:25:00 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/22 17:48:13 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	print_error_file(void)
 	exit(1);
 }
 
+
 void	define_data(t_data *data)
 {
 	data->players = 0;
@@ -26,6 +27,7 @@ void	define_data(t_data *data)
 	data->pars.line_count = 0;
 	data->pars.filecontent = ft_strdup("");
 	data->pars.map_str = NULL;
+	data->pars.map_copy	= NULL;
 }
 
 int	main(int ac, char **av)
