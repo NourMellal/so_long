@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:23:40 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 21:12:11 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/23 04:23:05 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,22 @@ void	start_parsing(char *path, t_data *data)
 void	check_if_valid_map(t_data *data)
 {
 	int	i;
-	// int nl;
 
 	i = 0;
 	while (data->pars.filecontent[i])
 	{
 		if (data->pars.filecontent[i] != '0' && data->pars.filecontent[i] != '1'
-			&& data->pars.filecontent[i] != 'P' && data->pars.filecontent[i] != 'C'
-			&& data->pars.filecontent[i] != 'E' && data->pars.filecontent[i] != '\n')
-				print_err("Invalid map", data);
+			&& data->pars.filecontent[i] != 'P'
+			&& data->pars.filecontent[i] != 'C'
+			&& data->pars.filecontent[i] != 'E'
+			&& data->pars.filecontent[i] != '\n')
+			print_err("Invalid map", data);
 		else
 			collect_data(data, data->pars.filecontent[i]);
 		i++;
 	}
-	// nl = count_new_lines(data->pars.filecontent);
 	data->pars.map_str = ft_split(data->pars.filecontent, '\n');
 	data->pars.map_copy = ft_split(data->pars.filecontent, '\n');
 	data->pars.map_copy2 = ft_split(data->pars.filecontent, '\n');
 	check_data(data);
 }
-

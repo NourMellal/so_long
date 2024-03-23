@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 21:02:55 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/23 04:28:32 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	check_for_err(int ac, char **av)
 		exit(1);
 	}
 }
+
 int	check_path(char *str)
 {
 	size_t	len;
@@ -41,13 +42,13 @@ int	check_path(char *str)
 
 void	check_data(t_data *data)
 {
-	check_edges(data);
 	if (data->players != 1)
 		print_err("Invalid amount of Players", data);
 	else if (data->exits != 1)
 		print_err("Invalid amount of exits", data);
 	else if (data->coins < 1)
 		print_err("Invalid amount of Coins", data);
+	check_edges(data);
 }
 
 void	check_edges(t_data *data)
@@ -70,7 +71,7 @@ void	check_edges(t_data *data)
 
 void	print_err(char *err_type, t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (data->pars.filecontent)
@@ -85,6 +86,6 @@ void	print_err(char *err_type, t_data *data)
 		free(data->pars.map_str);
 	}
 	ft_putendl_fd(err_type, 2);
-	close (data->fd);
+	close(data->fd);
 	exit(1);
 }

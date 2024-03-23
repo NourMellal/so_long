@@ -18,7 +18,6 @@ void	print_error_file(void)
 	exit(1);
 }
 
-
 void	define_data(t_data *data)
 {
 	data->players = 0;
@@ -28,17 +27,16 @@ void	define_data(t_data *data)
 	data->pars.line_count = 0;
 	data->pars.filecontent = ft_strdup("");
 	data->pars.map_str = NULL;
-	data->pars.map_copy	= NULL;
+	data->pars.map_copy = NULL;
 }
 
 int	main(int ac, char **av)
 {
 	t_data	data;
+
 	check_for_err(ac, av);
 	define_data(&data);
 	start_parsing(av[1], &data);
-
 	close(data.fd);
 	return (0);
 }
-
