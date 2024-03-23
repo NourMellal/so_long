@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 17:33:24 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/23 03:26:11 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,13 @@ typedef	struct s_player
 
 typedef	struct s_pars
 {
+	int	width;
+	int	height;
 	int line_count;
 	char *filecontent;
 	char **map_str;
 	char **map_copy;
+	char **map_copy2;
 }				t_pars;
 
 typedef struct s_data
@@ -60,6 +63,7 @@ typedef struct s_data
 	int	fd;
 	int players;
 	int	coins;
+	int collected_coins;
 	int exits;
 }		t_data;
 
@@ -79,5 +83,10 @@ void	last_and_first_line(char *str, t_data *data);
 void	inner_lines(char *str, t_data *data);
 void	check_edges(t_data *data);
 void	find_player_pos(t_data *data);
+void	flood_fill_coin(t_data *data, char **map, char **map_copy, int x, int y, int *collected_coins);
+// int		flood_fill_exit(t_data *data, char **map, char **map_copy, int x, int y);
+void	check_path_for_player(t_data *data);
+int flood_fill_exit(t_data *data, int x, int y);
+
 
 #endif

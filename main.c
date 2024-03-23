@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:11 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 17:48:13 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/23 03:29:09 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	define_data(t_data *data)
 	data->players = 0;
 	data->exits = 0;
 	data->coins = 0;
+	data->collected_coins = 0;
 	data->pars.line_count = 0;
 	data->pars.filecontent = ft_strdup("");
 	data->pars.map_str = NULL;

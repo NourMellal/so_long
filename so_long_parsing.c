@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   so_long_parsing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:23:40 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 03:21:18 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/22 21:12:11 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ void	check_if_valid_map(t_data *data)
 	}
 	// nl = count_new_lines(data->pars.filecontent);
 	data->pars.map_str = ft_split(data->pars.filecontent, '\n');
+	data->pars.map_copy = ft_split(data->pars.filecontent, '\n');
+	data->pars.map_copy2 = ft_split(data->pars.filecontent, '\n');
 	check_data(data);
 }
 

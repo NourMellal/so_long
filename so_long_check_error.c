@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/22 17:50:35 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/22 21:02:55 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	check_edges(t_data *data)
 			inner_lines(tmp[i], data);
 		i++;
 	}
-	data->pars.map_copy = data->pars.map_str;
+	check_path_for_player(data);
 }
 
 void	print_err(char *err_type, t_data *data)
@@ -85,5 +85,6 @@ void	print_err(char *err_type, t_data *data)
 		free(data->pars.map_str);
 	}
 	ft_putendl_fd(err_type, 2);
+	close (data->fd);
 	exit(1);
 }
