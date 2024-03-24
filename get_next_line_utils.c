@@ -6,11 +6,11 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:01:35 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/20 21:33:43 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/23 21:28:07 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "so_long.h"
 
 char	*destalloc(char *str)
 {

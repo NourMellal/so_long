@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/23 04:21:48 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/24 03:20:11 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <sys/stat.h>
 # include <sys/types.h>
 # include <unistd.h>
+# include <mlx.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -55,10 +56,19 @@ typedef struct s_pars
 	char		**map_copy2;
 }				t_pars;
 
+typedef struct s_game
+{
+	void		*mlx;
+	void		*win;
+	int			width;
+	int			height;
+}				t_game;
+
 typedef struct s_data
 {
 	t_player	player;
 	t_pars		pars;
+	t_game		game;
 	int			fd;
 	int			players;
 	int			coins;
@@ -85,5 +95,6 @@ void			find_player_pos(t_data *data);
 void			flood_fill_coin(t_data *data, char **map, int x, int y);
 void			check_path_for_player(t_data *data);
 int				flood_fill_exit(t_data *data, int x, int y);
-
+void			free_map_copy(t_data *data);
+void			start_game(t_data *data);
 #endif

@@ -16,7 +16,7 @@ SRCS = main.c \
 		get_next_line_utils.c \
 		so_long_parsing.c \
 		so_long_utils.c \
-		so_long_check_error.c so_long_utils2.c
+		so_long_check_error.c so_long_utils2.c so_long_game.c
 
 # Define objects for all source files
 OBJS = $(SRCS:.c=.o)
@@ -26,7 +26,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C $(LIBFT_DIR)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft -lmlx -framework OpenGL -framework AppKit
 
 # Define the rule for cleaning all compiled objects
 clean:
