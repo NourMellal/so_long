@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/24 23:08:58 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/25 00:26:47 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,9 @@ void			check_path_for_player(t_data *data);
 int				flood_fill_exit(t_data *data, int x, int y);
 void			free_map_copy(t_data *data);
 void			start_game(t_data *data);
+void			define_textures(t_data *data);
+int				draw_frame(t_data *data);
+int				key_hook(int key, t_data *data);
+void			key_hook2(int key, t_data *data);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 03:08:52 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/25 00:21:34 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/25 00:30:37 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,13 @@ int key_hook(int key, t_data*data)
 		data->player.texture = data->player.left;
 		data->player.x -= 32;
 	}
-	else if (key == KEY_S)
+	else
+		key_hook2(key, data);
+	return (0);
+}
+void	key_hook2(int key, t_data*data)
+{
+	if (key == KEY_S)
 	{
 		data->player.texture = data->player.down;
 		data->player.y += 32;
@@ -51,6 +57,7 @@ int draw_frame(t_data*data)
 		data->frames_elapsed = 0;
 	}
 	mlx_put_image_to_window(data->game.mlx, data->game.win, data->player.texture[data->player.current_frame], data->player.x, data->player.y);
+	return (0);
 }
 void	define_textures(t_data *data)
 {
