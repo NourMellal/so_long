@@ -27,15 +27,15 @@ all: $(NAME)
 
 # ==> for MACOS
 
-# $(NAME): $(OBJS)
-# 	make -C $(LIBFT_DIR)
-# 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft -lmlx -framework OpenGL -framework AppKit
+$(NAME): $(OBJS)
+	make -C $(LIBFT_DIR)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft -lmlx -framework OpenGL -framework AppKit
 
 #  ==> for LINUX
 
-$(NAME): $(OBJS)
-	make -C $(LIBFT_DIR)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft -lmlx -lXext -lX11 -lm
+# $(NAME): $(OBJS)
+# 	make -C $(LIBFT_DIR)
+# 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft -lmlx -lXext -lX11 -lm
 
 
 # Define the rule for cleaning all compiled objects

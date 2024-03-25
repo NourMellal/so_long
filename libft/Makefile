@@ -76,3 +76,4 @@ re: fclean all
 	$(CC) $(CFLAGS) -c $< -o $@
 	${AR} ${NAME} $@
 
+.SECONDARY: $(OBJS) $(OBJS_BONUS)

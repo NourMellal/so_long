@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/24 03:20:11 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/24 23:08:58 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@
 #  define BUFFER_SIZE 42
 # endif
 
+# define KEY_ESC 53
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
+
+
 char			*destalloc(char *str);
 char			*ft_strcat(char *dest, char *src);
 int				charsearch(char *buffer, char c);
@@ -41,6 +48,12 @@ char			*get_next_line(int fd);
 
 typedef struct s_player
 {
+	void** texture;
+	void		*up[4];
+	void		*down[4];
+	void		*left[4];
+	void		*right[4];
+	int current_frame;
 	int			x;
 	int			y;
 }				t_player;
@@ -60,12 +73,11 @@ typedef struct s_game
 {
 	void		*mlx;
 	void		*win;
-	int			width;
-	int			height;
 }				t_game;
 
 typedef struct s_data
 {
+	int	frames_elapsed;
 	t_player	player;
 	t_pars		pars;
 	t_game		game;

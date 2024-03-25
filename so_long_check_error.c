@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/23 04:28:32 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/25 00:15:52 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,11 @@ void	print_err(char *err_type, t_data *data)
 			i++;
 		}
 		free(data->pars.map_str);
+	}
+	if (data->game.mlx)
+	{
+		free(data->game.mlx);
+		mlx_destroy_window(data->game.mlx, data->game.win);
 	}
 	ft_putendl_fd(err_type, 2);
 	close(data->fd);

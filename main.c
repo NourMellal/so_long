@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:11 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/24 03:22:00 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/24 22:34:35 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ void	define_data(t_data *data)
 	data->pars.filecontent = ft_strdup("");
 	data->pars.map_str = NULL;
 	data->pars.map_copy = NULL;
-	data->game.height = 768;
-	data->game.width = 1024;
 }
 
 int	main(int ac, char **av)
 {
 	t_data	data;
+
+
 
 	check_for_err(ac, av);
 	define_data(&data);
