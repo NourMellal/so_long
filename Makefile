@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 # Define the directory containing the libft library
 LIBFT_DIR = ./libft
-PRINTF_DIR = ./ft_printf	
+PRINTF_DIR = ./printf	
 
 # Define the name of the executable
 NAME = so_long

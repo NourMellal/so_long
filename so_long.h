@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/25 01:48:34 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/25 23:43:37 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include "./libft/libft.h"
-# include "./ft_printf/ft_printf.h"
+# include "./printf/ft_printf.h"
 # include <fcntl.h>
 # include <limits.h>
 # include <stdio.h>

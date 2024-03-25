@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 03:08:52 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/25 19:53:46 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/25 23:44:05 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int key_hook(int key, t_data*data)
 		{
 			data->movements++;
 			data->player.y -= 1;
-./		}
+		}
 	}
 	else if (key == KEY_A)
 	{
