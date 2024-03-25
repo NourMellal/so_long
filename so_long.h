@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/25 00:26:47 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/25 01:48:34 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include "./libft/libft.h"
+# include "./ft_printf/ft_printf.h"
 # include <fcntl.h>
 # include <limits.h>
 # include <stdio.h>
@@ -34,6 +35,7 @@
 # define KEY_S 1
 # define KEY_D 2
 
+# define ON_DESTROY 17
 
 char			*destalloc(char *str);
 char			*ft_strcat(char *dest, char *src);
@@ -73,14 +75,20 @@ typedef struct s_game
 {
 	void		*mlx;
 	void		*win;
+	void		*img;
+	void		*wall;
+	void		*exit;
+	void		*coin;
+	void		*floor;
 }				t_game;
 
 typedef struct s_data
 {
-	int	frames_elapsed;
 	t_player	player;
 	t_pars		pars;
 	t_game		game;
+	int			movements;
+	int			frames_elapsed;
 	int			fd;
 	int			players;
 	int			coins;
@@ -113,5 +121,7 @@ void			define_textures(t_data *data);
 int				draw_frame(t_data *data);
 int				key_hook(int key, t_data *data);
 void			key_hook2(int key, t_data *data);
+void			define_textures2(t_data *data);
+void			draw_map(t_data *data);
 
 #endif

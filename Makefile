@@ -2,10 +2,11 @@
 CC = gcc
 
 # Define any compile-time flags
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 # Define the directory containing the libft library
 LIBFT_DIR = ./libft
+PRINTF_DIR = ./ft_printf	
 
 # Define the name of the executable
 NAME = so_long
@@ -29,7 +30,8 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C $(LIBFT_DIR)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft -lmlx -framework OpenGL -framework AppKit
+	make -C $(PRINTF_DIR)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lftprintf -lft -lmlx -framework OpenGL -framework AppKit
 
 #  ==> for LINUX
 
@@ -41,11 +43,13 @@ $(NAME): $(OBJS)
 # Define the rule for cleaning all compiled objects
 clean:
 	make clean -C $(LIBFT_DIR)
+	make clean -C $(PRINTF_DIR)
 	rm -f $(OBJS)
 
 # Define the rule for removing the compiled objects and the executable
 fclean: clean
 	make fclean -C $(LIBFT_DIR)
+	make fclean -C $(PRINTF_DIR)
 	rm -f $(NAME)
 
 # Define the rule for recompiling everything
