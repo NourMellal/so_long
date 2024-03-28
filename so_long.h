@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/25 23:43:37 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/28 13:28:43 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include "./printf/ft_printf.h"
 # include <fcntl.h>
 # include <limits.h>
+# include <mlx.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <sys/stat.h>
 # include <sys/types.h>
 # include <unistd.h>
-# include <mlx.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -50,12 +50,12 @@ char			*get_next_line(int fd);
 
 typedef struct s_player
 {
-	void** texture;
+	void		**texture;
 	void		*up[4];
 	void		*down[4];
 	void		*left[4];
 	void		*right[4];
-	int current_frame;
+	int			current_frame;
 	int			x;
 	int			y;
 }				t_player;
@@ -123,5 +123,11 @@ int				key_hook(int key, t_data *data);
 void			key_hook2(int key, t_data *data);
 void			define_textures2(t_data *data);
 void			draw_map(t_data *data);
+void			w_key(t_data *data);
+void			a_key(t_data *data);
+void			s_key(t_data *data);
+void			d_key(t_data *data);
+void			define_textures3(t_data *data);
+void			check_player_postion(t_data *data);
 
 #endif

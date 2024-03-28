@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:35:53 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/23 20:05:01 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/28 13:04:44 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	flood_fill_exit(t_data *data, int x, int y)
 		return (1);
 	return (0);
 }
+
 void	free_map_copy(t_data *data)
 {
 	int	i;

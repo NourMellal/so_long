@@ -2,7 +2,7 @@
 CC = gcc
 
 # Define any compile-time flags
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 # Define the directory containing the libft library
 LIBFT_DIR = ./libft
@@ -17,13 +17,11 @@ SRCS = main.c \
 		get_next_line_utils.c \
 		so_long_parsing.c \
 		so_long_utils.c \
-		so_long_check_error.c so_long_utils2.c so_long_game.c
-
+		so_long_check_error.c so_long_utils2.c so_long_game.c \
+		so_long_game2.c so_long_game3.c so_long_utils3.c
 # Define objects for all source files
 OBJS = $(SRCS:.c=.o)
 
-# Define the target that compiles our executable
-all: $(NAME)
 
 
 # ==> for MACOS
@@ -40,6 +38,8 @@ $(NAME): $(OBJS)
 	make -C $(PRINTF_DIR)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lftprintf -lft -lmlx -lXext -lX11 -lm
 
+# Define the rule for compiling all source files
+all: $(NAME)
 
 # Define the rule for cleaning all compiled objects
 clean:
