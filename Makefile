@@ -26,17 +26,17 @@ OBJS = $(SRCS:.c=.o)
 
 # ==> for MACOS
 
-# $(NAME): $(OBJS)
-# 	make -C $(LIBFT_DIR)
-# 	make -C $(PRINTF_DIR)
-# 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lftprintf -lft -lmlx -framework OpenGL -framework AppKit
-
-#  ==> for LINUX
-
 $(NAME): $(OBJS)
 	make -C $(LIBFT_DIR)
 	make -C $(PRINTF_DIR)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lftprintf -lft -lmlx -lXext -lX11 -lm
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lftprintf -lft -lmlx -framework OpenGL -framework AppKit
+
+#  ==> for LINUX
+
+# $(NAME): $(OBJS)
+# 	make -C $(LIBFT_DIR)
+# 	make -C $(PRINTF_DIR)
+# 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lftprintf -lft -lmlx -lXext -lX11 -lm
 
 # Define the rule for compiling all source files
 all: $(NAME)

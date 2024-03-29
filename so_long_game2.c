@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:44:57 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/28 13:29:08 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/29 00:49:44 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ int	key_hook(int key, t_data *data)
 	return (0);
 }
 
-
 void	define_textures2(t_data *data)
 {
-	int height;
-	int width;
+	int	height;
+	int	width;
 
 	data->game.wall = mlx_xpm_file_to_image(data->game.mlx, "./imgs/wall.xpm", &height, &width);
 	data->game.exit = mlx_xpm_file_to_image(data->game.mlx, "./imgs/exit.xpm", &height, &width);
 	data->game.coin = mlx_xpm_file_to_image(data->game.mlx, "./imgs/Coin2.xpm", &height, &width);
-	data->game.floor = mlx_xpm_file_to_image(data->game.mlx, "./imgs/black.xpm", &height, &width);
+	data->game.floor = mlx_xpm_file_to_image(data->game.mlx, "./imgs/blac.xpm", &height, &width);
+	check_textures(data);
 }
 
 void	define_textures3(t_data *data)
@@ -92,3 +92,20 @@ void	define_textures(t_data *data)
 			"./imgs/pac_down4.xpm", &height, &width);
 	define_textures3(data);
 }
+
+void	check_textures(t_data *data)
+{
+	if (data->player.up[0] == NULL || data->player.up[1] == NULL
+		|| data->player.up[2] == NULL || data->player.up[3] == NULL
+		|| data->player.down[0] == NULL || data->player.down[1] == NULL
+		|| data->player.down[2] == NULL || data->player.down[3] == NULL
+		|| data->player.left[0] == NULL || data->player.left[1] == NULL
+		|| data->player.left[2] == NULL || data->player.left[3] == NULL
+		|| data->player.right[0] == NULL || data->player.right[1] == NULL
+		|| data->player.right[2] == NULL || data->player.right[3] == NULL
+		|| data->game.wall == NULL || data->game.exit == NULL
+		|| data->game.coin == NULL || data->game.floor == NULL)
+		print_err("mlx_xpm_file_to_image failed", data);
+	puts("check_textures");
+}
+
