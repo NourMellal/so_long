@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:44:57 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 00:49:44 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/29 02:05:55 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	check_textures(t_data *data)
 		|| data->player.right[2] == NULL || data->player.right[3] == NULL
 		|| data->game.wall == NULL || data->game.exit == NULL
 		|| data->game.coin == NULL || data->game.floor == NULL)
-		print_err("mlx_xpm_file_to_image failed", data);
+		print_err("mlx_xpm_file_to_image failed", data, 1);
 	puts("check_textures");
 }
 

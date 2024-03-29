@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 23:39:00 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/23 04:24:13 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/29 02:06:36 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	last_and_first_line(char *str, t_data *data)
 	while (str[i])
 	{
 		if (str[i] != '1')
-			print_err("Invalid map", data);
+			print_err("Invalid map", data, 1);
 		i++;
 	}
 }
@@ -64,15 +64,15 @@ void	inner_lines(char *str, t_data *data)
 
 	i = 0;
 	if (str[i] != '1')
-		print_err("Invalid map", data);
+		print_err("Invalid map", data, 1);
 	i++;
 	while (str[i])
 	{
 		if (str[i] != '0' && str[i] != '1' && str[i] != 'P' && str[i] != 'C'
 			&& str[i] != 'E')
-			print_err("Invalid map", data);
+			print_err("Invalid map", data, 1);
 		i++;
 	}
 	if (str[i - 1] != '1')
-		print_err("Invalid map", data);
+		print_err("Invalid map", data, 1);
 }

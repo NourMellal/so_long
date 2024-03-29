@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:23:40 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/23 04:23:05 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/29 02:06:15 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	get_line(t_data *data)
 
 	s = get_next_line(data->fd);
 	if (s == NULL)
-		print_err("Invalid map", data);
+		print_err("Invalid map", data, 1);
 	line_check = check_line(data, s);
 	while (s)
 	{
@@ -29,7 +29,7 @@ void	get_line(t_data *data)
 		s = get_next_line(data->fd);
 		line_check2 = check_line(data, s);
 		if (line_check != line_check2 && line_check2 != -1)
-			print_err("Invalid map", data);
+			print_err("Invalid map", data, 1);
 	}
 	s = NULL;
 }
@@ -55,7 +55,7 @@ void	check_if_valid_map(t_data *data)
 			&& data->pars.filecontent[i] != 'C'
 			&& data->pars.filecontent[i] != 'E'
 			&& data->pars.filecontent[i] != '\n')
-			print_err("Invalid map", data);
+			print_err("Invalid map", data, 1);
 		else
 			collect_data(data, data->pars.filecontent[i]);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/25 00:15:52 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/29 02:05:17 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int	check_path(char *str)
 void	check_data(t_data *data)
 {
 	if (data->players != 1)
-		print_err("Invalid amount of Players", data);
+		print_err("Invalid amount of Players", data, 1);
 	else if (data->exits != 1)
-		print_err("Invalid amount of exits", data);
+		print_err("Invalid amount of exits", data, 1);
 	else if (data->coins < 1)
-		print_err("Invalid amount of Coins", data);
+		print_err("Invalid amount of Coins", data, 1);
 	check_edges(data);
 }
 
@@ -69,7 +69,7 @@ void	check_edges(t_data *data)
 	check_path_for_player(data);
 }
 
-void	print_err(char *err_type, t_data *data)
+void	print_err(char *err_type, t_data *data, int print_err)
 {
 	int	i;
 
@@ -85,12 +85,11 @@ void	print_err(char *err_type, t_data *data)
 		}
 		free(data->pars.map_str);
 	}
-	if (data->game.mlx)
+	free2(data);
+	if (print_err)
 	{
-		free(data->game.mlx);
-		mlx_destroy_window(data->game.mlx, data->game.win);
+		ft_putendl_fd(err_type, 2);
+		close(data->fd);
+		exit(1);
 	}
-	ft_putendl_fd(err_type, 2);
-	close(data->fd);
-	exit(1);
 }

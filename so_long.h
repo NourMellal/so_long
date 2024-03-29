@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 00:45:11 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/29 22:42:37 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void			start_parsing(char *path, t_data *data);
 void			check_if_valid_map(t_data *data);
 void			check_for_err(int ac, char **av);
 void			print_error_file(void);
-void			print_err(char *err_type, t_data *data);
+void			print_err(char *err_type, t_data *data, int print_err);								
 int				count_strs(char **strs);
 int				check_line(t_data *data, char *s);
 void			get_line(t_data *data);

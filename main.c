@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:11 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/25 01:41:21 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/29 02:03:42 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	define_data(t_data *data)
 	data->pars.filecontent = ft_strdup("");
 	data->pars.map_str = NULL;
 	data->pars.map_copy = NULL;
+	data->pars.map_copy2 = NULL;
 }
 
 int	main(int ac, char **av)
@@ -40,6 +41,6 @@ int	main(int ac, char **av)
 	start_parsing(av[1], &data);
 	data.collected_coins = 0;
 	start_game(&data);
-	close(data.fd);
+	print_err("", &data, 0);
 	return (0);
 }
