@@ -2,7 +2,7 @@
 CC = gcc
 
 # Define any compile-time flags
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 # Define the directory containing the libft library
 LIBFT_DIR = ./libft
@@ -18,7 +18,7 @@ SRCS = main.c \
 		so_long_parsing.c \
 		so_long_utils.c \
 		so_long_check_error.c so_long_utils2.c so_long_game.c \
-		so_long_game2.c so_long_game3.c so_long_utils3.c
+		so_long_game2.c so_long_game3.c so_long_utils3.c so_long_check_error2.c \
 # Define objects for all source files
 OBJS = $(SRCS:.c=.o)
 

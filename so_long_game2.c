@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:44:57 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 02:05:55 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/29 22:54:33 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	key_hook(int key, t_data *data)
 {
 	if (key == KEY_ESC)
 	{
-		mlx_destroy_window(data->game.mlx, data->game.win);
+		print_err("", data, 0);
+		system("leaks so_long");
 		exit(0);
 	}
 	else if (key == KEY_W)
@@ -38,8 +39,7 @@ void	define_textures2(t_data *data)
 	data->game.wall = mlx_xpm_file_to_image(data->game.mlx, "./imgs/wall.xpm", &height, &width);
 	data->game.exit = mlx_xpm_file_to_image(data->game.mlx, "./imgs/exit.xpm", &height, &width);
 	data->game.coin = mlx_xpm_file_to_image(data->game.mlx, "./imgs/Coin2.xpm", &height, &width);
-	data->game.floor = mlx_xpm_file_to_image(data->game.mlx, "./imgs/blac.xpm", &height, &width);
-	check_textures(data);
+	data->game.floor = mlx_xpm_file_to_image(data->game.mlx, "./imgs/black.xpm", &height, &width);
 }
 
 void	define_textures3(t_data *data)
@@ -92,20 +92,3 @@ void	define_textures(t_data *data)
 			"./imgs/pac_down4.xpm", &height, &width);
 	define_textures3(data);
 }
-
-void	check_textures(t_data *data)
-{
-	if (data->player.up[0] == NULL || data->player.up[1] == NULL
-		|| data->player.up[2] == NULL || data->player.up[3] == NULL
-		|| data->player.down[0] == NULL || data->player.down[1] == NULL
-		|| data->player.down[2] == NULL || data->player.down[3] == NULL
-		|| data->player.left[0] == NULL || data->player.left[1] == NULL
-		|| data->player.left[2] == NULL || data->player.left[3] == NULL
-		|| data->player.right[0] == NULL || data->player.right[1] == NULL
-		|| data->player.right[2] == NULL || data->player.right[3] == NULL
-		|| data->game.wall == NULL || data->game.exit == NULL
-		|| data->game.coin == NULL || data->game.floor == NULL)
-		print_err("mlx_xpm_file_to_image failed", data, 1);
-	puts("check_textures");
-}
-

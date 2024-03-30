@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:11 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 02:03:42 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/29 22:52:02 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(int ac, char **av)
 	start_parsing(av[1], &data);
 	data.collected_coins = 0;
 	start_game(&data);
+	system("leaks so_long");
 	print_err("", &data, 0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 02:05:17 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/30 01:06:54 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,11 @@ void	print_err(char *err_type, t_data *data, int print_err)
 	int	i;
 
 	i = 0;
-	if (data->pars.filecontent)
-		free(data->pars.filecontent);
-	if (data->pars.map_str)
+	if (data->game.mlx)
 	{
-		while (data->pars.map_str[i])
-		{
-			free(data->pars.map_str[i]);
-			i++;
-		}
-		free(data->pars.map_str);
+		mlx_destroy_window(data->game.mlx, data->game.win);
+		free(data->game.mlx);
 	}
-	free2(data);
 	if (print_err)
 	{
 		ft_putendl_fd(err_type, 2);

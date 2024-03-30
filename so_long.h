@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 22:42:37 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/30 01:00:27 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,6 @@ void			s_key(t_data *data);
 void			d_key(t_data *data);
 void			define_textures3(t_data *data);
 void			check_player_postion(t_data *data);
-void			check_textures(t_data *data);
+void			free_2d_maps(char **arr);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:23:40 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 02:06:15 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/30 01:01:32 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,8 @@ void	check_if_valid_map(t_data *data)
 	data->pars.map_copy = ft_split(data->pars.filecontent, '\n');
 	data->pars.map_copy2 = ft_split(data->pars.filecontent, '\n');
 	check_data(data);
+	free_2d_maps(data->pars.map_str);
+	free_2d_maps(data->pars.map_copy);
+	free_2d_maps(data->pars.map_copy2);
+	free(data->pars.filecontent);
 }
