@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 03:08:52 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/28 13:04:12 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/31 11:10:16 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	check_player_postion(t_data *data)
 		&& data->collected_coins >= data->coins)
 	{
 		mlx_destroy_window(data->game.mlx, data->game.win);
+		free_2d_maps(data->pars.map_str);
+		free(data->game.mlx);
 		ft_putendl_fd("You won", 1);
 		exit(0);
 	}

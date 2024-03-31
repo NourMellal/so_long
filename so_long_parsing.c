@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:23:40 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/30 01:01:32 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/31 11:15:53 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ void	get_line(t_data *data)
 		s = get_next_line(data->fd);
 		line_check2 = check_line(data, s);
 		if (line_check != line_check2 && line_check2 != -1)
+		{
+			free(s);
+			free(data->pars.filecontent);
 			print_err("Invalid map", data, 1);
+		}
 	}
 	s = NULL;
 }
@@ -64,7 +68,6 @@ void	check_if_valid_map(t_data *data)
 	data->pars.map_copy = ft_split(data->pars.filecontent, '\n');
 	data->pars.map_copy2 = ft_split(data->pars.filecontent, '\n');
 	check_data(data);
-	free_2d_maps(data->pars.map_str);
 	free_2d_maps(data->pars.map_copy);
 	free_2d_maps(data->pars.map_copy2);
 	free(data->pars.filecontent);

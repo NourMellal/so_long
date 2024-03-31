@@ -6,18 +6,12 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:45:33 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 02:05:45 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/31 10:43:01 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	close_game(t_data *data)
-{
-	mlx_destroy_window(data->game.mlx, data->game.win);
-	free(data->pars.filecontent);
-	exit(0);
-}
 
 void	start_game(t_data *data)
 {

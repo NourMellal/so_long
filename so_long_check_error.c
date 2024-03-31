@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/30 01:06:54 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/31 10:46:38 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,6 @@ void	check_edges(t_data *data)
 
 void	print_err(char *err_type, t_data *data, int print_err)
 {
-	int	i;
-
-	i = 0;
 	if (data->game.mlx)
 	{
 		mlx_destroy_window(data->game.mlx, data->game.win);

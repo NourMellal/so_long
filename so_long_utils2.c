@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:35:53 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 02:07:01 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/31 10:50:13 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,21 +66,6 @@ int	flood_fill_exit(t_data *data, int x, int y)
 	return (0);
 }
 
-void	free_map_copy(t_data *data)
-{
-	int	i;
-
-	i = 0;
-	while (data->pars.map_copy[i])
-	{
-		free(data->pars.map_copy[i]);
-		free(data->pars.map_copy2[i]);
-		i++;
-	}
-	free(data->pars.map_copy);
-	free(data->pars.map_copy2);
-}
-
 void	check_path_for_player(t_data *data)
 {
 	int	path_to_exit;
@@ -95,5 +80,4 @@ void	check_path_for_player(t_data *data)
 		print_err("You don't have the path to all the coins", data, 1);
 	else if (path_to_exit == 0)
 		print_err("No path to exit", data, 1);
-	free_map_copy(data);
 }

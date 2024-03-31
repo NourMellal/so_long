@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:44:57 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 22:54:33 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/31 11:18:26 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	key_hook(int key, t_data *data)
 {
 	if (key == KEY_ESC)
 	{
+		free_2d_maps(data->pars.map_str);
 		print_err("", data, 0);
-		system("leaks so_long");
 		exit(0);
 	}
 	else if (key == KEY_W)

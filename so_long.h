@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/30 01:00:27 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/03/31 11:06:35 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,21 @@
 #  define BUFFER_SIZE 42
 # endif
 
-# define KEY_ESC 53
-# define KEY_W 13
-# define KEY_A 0
-# define KEY_S 1
-# define KEY_D 2
+// for mac
+// # define KEY_ESC 53
+// # define KEY_W 13
+// # define KEY_A 0
+// # define KEY_S 1
+// # define KEY_D 2
+// # define ON_DESTROY 17
 
-# define ON_DESTROY 17
+// for linux
+# define KEY_ESC 65307
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+# define ON_DESTROY 33
 
 char			*destalloc(char *str);
 char			*ft_strcat(char *dest, char *src);
@@ -102,7 +110,7 @@ void			start_parsing(char *path, t_data *data);
 void			check_if_valid_map(t_data *data);
 void			check_for_err(int ac, char **av);
 void			print_error_file(void);
-void			print_err(char *err_type, t_data *data, int print_err);								
+void			print_err(char *err_type, t_data *data, int print_err);
 int				count_strs(char **strs);
 int				check_line(t_data *data, char *s);
 void			get_line(t_data *data);
