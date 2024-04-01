@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:23:40 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/31 11:15:53 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/01 01:32:48 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,27 @@
 void	get_line(t_data *data)
 {
 	char	*s;
+	char	*tmp;
 	int		line_check;
-	int		line_check2;
 
 	s = get_next_line(data->fd);
 	if (s == NULL)
 		print_err("Invalid map", data, 1);
-	line_check = check_line(data, s);
+	line_check = count_line(s);
 	while (s)
 	{
-		data->pars.filecontent = ft_strjoin(data->pars.filecontent, s);
-		free(s);
-		s = get_next_line(data->fd);
-		line_check2 = check_line(data, s);
-		if (line_check != line_check2 && line_check2 != -1)
+		tmp = ft_strjoin(data->pars.filecontent, s);
+		if (!tmp)
 		{
 			free(s);
-			free(data->pars.filecontent);
-			print_err("Invalid map", data, 1);
+			print_err("Malloc failed", data, 1);
 		}
+		free(data->pars.filecontent);
+		data->pars.filecontent = tmp;
+		free(s);
+		s = get_next_line(data->fd);
+		if (s)
+			check_line(data, s, line_check);
 	}
 	s = NULL;
 }

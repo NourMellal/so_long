@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:50:54 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 01:46:35 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/01 01:36:08 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	w_key(t_data *data)
 {
 	data->player.texture = data->player.up;
-	if (data->player.y > 0
-		&& data->pars.map_str[data->player.y - 1][data->player.x] != '1')
+	if (data->player.y > 0 && data->pars.map_str[data->player.y
+			- 1][data->player.x] != '1')
 	{
 		data->movements++;
 		data->player.y--;
@@ -27,8 +27,8 @@ void	w_key(t_data *data)
 void	a_key(t_data *data)
 {
 	data->player.texture = data->player.left;
-	if (data->player.x > 0
-		&& data->pars.map_str[data->player.y][data->player.x - 1] != '1')
+	if (data->player.x > 0 && data->pars.map_str[data->player.y][data->player.x
+		- 1] != '1')
 	{
 		data->movements++;
 		data->player.x--;
@@ -60,3 +60,12 @@ void	d_key(t_data *data)
 	}
 }
 
+int	count_line(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] && str[i] != '\n')
+		i++;
+	return (i);
+}

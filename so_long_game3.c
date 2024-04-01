@@ -6,12 +6,11 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:45:33 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/31 10:43:01 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/01 01:36:20 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 
 void	start_game(t_data *data)
 {
@@ -24,7 +23,6 @@ void	start_game(t_data *data)
 		print_err("mlx_new_window failed", data, 1);
 	define_textures(data);
 	mlx_hook(data->game.win, 2, 1L << 0, key_hook, data);
-	// mlx_hook(data->game.win, ON_DESTROY, 0, close_game, data);
 	mlx_loop_hook(data->game.mlx, draw_frame, data);
 	mlx_loop(data->game.mlx);
 }

@@ -36,10 +36,14 @@ void	define_textures2(t_data *data)
 	int	height;
 	int	width;
 
-	data->game.wall = mlx_xpm_file_to_image(data->game.mlx, "./imgs/wall.xpm", &height, &width);
-	data->game.exit = mlx_xpm_file_to_image(data->game.mlx, "./imgs/exit.xpm", &height, &width);
-	data->game.coin = mlx_xpm_file_to_image(data->game.mlx, "./imgs/Coin2.xpm", &height, &width);
-	data->game.floor = mlx_xpm_file_to_image(data->game.mlx, "./imgs/black.xpm", &height, &width);
+	data->game.wall = mlx_xpm_file_to_image(data->game.mlx, "./imgs/wall.xpm",
+			&height, &width);
+	data->game.exit = mlx_xpm_file_to_image(data->game.mlx, "./imgs/exit.xpm",
+			&height, &width);
+	data->game.coin = mlx_xpm_file_to_image(data->game.mlx, "./imgs/Coin2.xpm",
+			&height, &width);
+	data->game.floor = mlx_xpm_file_to_image(data->game.mlx, "./imgs/black.xpm",
+			&height, &width);
 }
 
 void	define_textures3(t_data *data)

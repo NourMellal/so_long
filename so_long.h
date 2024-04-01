@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/31 11:06:35 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/01 01:31:58 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void			check_for_err(int ac, char **av);
 void			print_error_file(void);
 void			print_err(char *err_type, t_data *data, int print_err);
 int				count_strs(char **strs);
-int				check_line(t_data *data, char *s);
+void			check_line(t_data *data, char *s, int line);
 void			get_line(t_data *data);
 void			collect_data(t_data *data, char byte);
 void			check_data(t_data *data);
@@ -138,5 +138,6 @@ void			d_key(t_data *data);
 void			define_textures3(t_data *data);
 void			check_player_postion(t_data *data);
 void			free_2d_maps(char **arr);
+int				count_line(char *str);
 
 #endif

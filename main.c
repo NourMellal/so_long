@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:11 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/31 11:12:23 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/01 01:17:38 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	define_data(t_data *data)
 	data->collected_coins = 0;
 	data->pars.line_count = 0;
 	data->movements = 0;
-	data->pars.filecontent = ft_strdup("");
+	data->pars.filecontent = NULL;
+	data->game.mlx = NULL;
 	data->pars.map_str = NULL;
 	data->pars.map_copy = NULL;
 	data->pars.map_copy2 = NULL;

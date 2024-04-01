@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 23:39:00 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/29 02:06:36 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/01 01:34:41 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,25 @@ void	collect_data(t_data *data, char byte)
 		data->exits += 1;
 }
 
-int	check_line(t_data *data, char *s)
+void	check_line(t_data *data, char *s, int line)
 {
 	int	i;
 
 	if (!s)
-		return (-1);
+	{
+		free(data->pars.filecontent);
+		print_err("Invalid map", data, 1);
+	}
 	data->pars.line_count += 1;
 	i = 0;
 	while (s[i] && i[s] != '\n')
 		i++;
-	return (i);
+	if (line != i)
+	{
+		free(s);
+		free(data->pars.filecontent);
+		print_err("Invalid map", data, 1);
+	}
 }
 
 void	last_and_first_line(char *str, t_data *data)
