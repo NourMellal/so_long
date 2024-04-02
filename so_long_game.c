@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 03:08:52 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/31 11:10:16 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/02 10:21:44 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	draw_frame(t_data *data)
 		data->player.current_frame = (data->player.current_frame + 1) % 4;
 		data->frames_elapsed = 0;
 	}
+	if (data->player.texture[data->player.current_frame] == NULL)
+		print_err("mlx_xpm_file_to_image failed", data, 1);
 	mlx_put_image_to_window(data->game.mlx, data->game.win,
 		data->player.texture[data->player.current_frame], data->player.x * 32,
 		data->player.y * 32);
@@ -73,6 +75,8 @@ void	draw_map(t_data *data)
 		{
 			c = data->pars.map_str[i][j];
 			data->game.img = choose_img(data, c);
+			if (data->game.img == NULL)
+				print_err("mlx_xpm_file_to_image failed", data, 1);
 			mlx_put_image_to_window(data->game.mlx, data->game.win,
 				data->game.img, j * 32, i * 32);
 			j++;
