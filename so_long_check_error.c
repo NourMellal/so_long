@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/02 10:24:52 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/11 20:22:22 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,5 @@ void	print_err(char *err_type, t_data *data, int print_err)
 		close(data->fd);
 		exit(1);
 	}
+	exit(0);
 }
