@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 23:39:00 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/01 01:34:41 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/13 12:49:14 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	check_line(t_data *data, char *s, int line)
 	if (!s)
 	{
 		free(data->pars.filecontent);
-		print_err("Invalid map", data, 1);
+		print_err("Error\nInvalid map", data, 1);
 	}
 	data->pars.line_count += 1;
 	i = 0;
@@ -49,7 +49,7 @@ void	check_line(t_data *data, char *s, int line)
 	{
 		free(s);
 		free(data->pars.filecontent);
-		print_err("Invalid map", data, 1);
+		print_err("Error\nInvalid map", data, 1);
 	}
 }
 
@@ -61,7 +61,7 @@ void	last_and_first_line(char *str, t_data *data)
 	while (str[i])
 	{
 		if (str[i] != '1')
-			print_err("Invalid map", data, 1);
+			print_err("Error\nInvalid map", data, 1);
 		i++;
 	}
 }
@@ -72,15 +72,15 @@ void	inner_lines(char *str, t_data *data)
 
 	i = 0;
 	if (str[i] != '1')
-		print_err("Invalid map", data, 1);
+		print_err("Error\nInvalid map", data, 1);
 	i++;
 	while (str[i])
 	{
 		if (str[i] != '0' && str[i] != '1' && str[i] != 'P' && str[i] != 'C'
 			&& str[i] != 'E')
-			print_err("Invalid map", data, 1);
+			print_err("Error\nInvalid map", data, 1);
 		i++;
 	}
 	if (str[i - 1] != '1')
-		print_err("Invalid map", data, 1);
+		print_err("Error\nInvalid map", data, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:35:53 by nmellal           #+#    #+#             */
-/*   Updated: 2024/03/31 10:50:13 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/13 12:49:35 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ void	check_path_for_player(t_data *data)
 	flood_fill_coin(data, data->pars.map_str, data->player.x, data->player.y);
 	path_to_exit = flood_fill_exit(data, data->player.x, data->player.y);
 	if (data->collected_coins != data->coins && path_to_exit == 0)
-		print_err("You don't have the path to all the coins or to the exit",
+		print_err("Error\nYou don't have the path to all the coins or to the exit",
 			data, 1);
 	else if (data->collected_coins != data->coins)
-		print_err("You don't have the path to all the coins", data, 1);
+		print_err("Error\nYou don't have the path to all the coins", data, 1);
 	else if (path_to_exit == 0)
-		print_err("No path to exit", data, 1);
+		print_err("Error\nNo path to exit", data, 1);
 }

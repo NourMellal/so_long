@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/02 09:56:55 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/12 22:45:16 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ typedef struct s_game
 	void		*exit;
 	void		*coin;
 	void		*floor;
+	int			flag;
 }				t_game;
 
 typedef struct s_data

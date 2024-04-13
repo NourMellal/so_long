@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/11 20:22:22 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/13 12:50:26 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	check_for_err(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		ft_putendl_fd("Too few arguments", 2);
+		ft_putendl_fd("Error\nToo few arguments", 2);
 		exit(1);
 	}
 	if (!check_path(av[1]))
 	{
-		ft_putendl_fd("Wrong file name!", 2);
+		ft_putendl_fd("Error\nWrong file name!", 2);
 		exit(1);
 	}
 }
@@ -43,11 +43,11 @@ int	check_path(char *str)
 void	check_data(t_data *data)
 {
 	if (data->players != 1)
-		print_err("Invalid amount of Players", data, 1);
+		print_err("Error\nInvalid amount of Players", data, 1);
 	else if (data->exits != 1)
-		print_err("Invalid amount of exits", data, 1);
+		print_err("Error\nInvalid amount of exits", data, 1);
 	else if (data->coins < 1)
-		print_err("Invalid amount of Coins", data, 1);
+		print_err("Error\nInvalid amount of Coins", data, 1);
 	check_edges(data);
 }
 

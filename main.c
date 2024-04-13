@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:11 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/01 01:17:38 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/13 12:49:56 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_error_file(void)
 {
-	ft_putendl_fd("File can't open", 2);
+	ft_putendl_fd("Error\nFile can't open", 2);
 	exit(1);
 }
 
@@ -25,6 +25,8 @@ void	define_data(t_data *data)
 	data->coins = 0;
 	data->collected_coins = 0;
 	data->pars.line_count = 0;
+	data->frames_elapsed = 0;
+	data->game.flag = 1;
 	data->movements = 0;
 	data->pars.filecontent = NULL;
 	data->game.mlx = NULL;
