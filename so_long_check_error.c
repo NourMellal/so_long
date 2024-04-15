@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:35:15 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/13 12:50:26 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/15 15:04:24 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,19 @@ void	check_for_err(int ac, char **av)
 int	check_path(char *str)
 {
 	size_t	len;
+	char	*tmp;
 
+	tmp = str;
 	len = ft_strlen(str);
 	if (len < 5)
 		return (0);
-	str += len - 4;
-	if (strcmp(".ber", str) == 0)
-		return (1);
-	else
-		return (0);
+	tmp += len - 4;
+	if (strcmp(".ber", tmp) == 0)
+	{
+		if (str[len - 5] && str[len - 5] != '/')
+			return (1);
+	}
+	return (0);
 }
 
 void	check_data(t_data *data)
