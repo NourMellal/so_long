@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:45:33 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/13 12:53:37 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/15 14:24:50 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	start_game(t_data *data)
 	if (data->game.win == NULL)
 		print_err("Error\nmlx_new_window failed", data, 1);
 	define_textures(data);
-	mlx_hook(data->game.win, 2, 1L << 0, key_hook, data);
-	mlx_hook(data->game.win, 17, 1L << 17, destroy, data);
+	mlx_hook(data->game.win, 2, 0, key_hook, data);
+	mlx_hook(data->game.win, 17, 0, destroy, data);
 	mlx_loop_hook(data->game.mlx, draw_frame, data);
 	mlx_loop(data->game.mlx);
 }

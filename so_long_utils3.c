@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:50:54 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/13 12:43:36 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/15 13:58:37 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,23 @@ void	w_key(t_data *data)
 {
 	data->player.texture = data->player.up;
 	if (data->player.y > 0 && data->pars.map_str[data->player.y
-			- 1][data->player.x] != '1')
+			- 1][data->player.x] != '1' && data->pars.map_str[data->player.y
+		- 1][data->player.x] != 'E')
 	{
 		mlx_put_image_to_window(data->game.mlx, data->game.win,
 			data->game.floor, data->player.x * 32, data->player.y * 32);
 		data->movements++;
 		data->player.y--;
-		ft_printf("Moves : %d\n", data->movements);
+		ft_printf("\rMoves : %d", data->movements);
+	}
+	else if (data->pars.map_str[data->player.y - 1][data->player.x] == 'E'
+		&& data->collected_coins >= data->coins)
+	{
+		mlx_put_image_to_window(data->game.mlx, data->game.win,
+			data->game.floor, data->player.x * 32, data->player.y * 32);
+		data->movements++;
+		data->player.y--;
+		ft_printf("\rMoves : %d", data->movements);
 	}
 }
 
@@ -30,13 +40,23 @@ void	a_key(t_data *data)
 {
 	data->player.texture = data->player.left;
 	if (data->player.x > 0 && data->pars.map_str[data->player.y][data->player.x
-		- 1] != '1')
+		- 1] != '1' && data->pars.map_str[data->player.y][data->player.x
+		- 1] != 'E')
 	{
 		mlx_put_image_to_window(data->game.mlx, data->game.win,
 			data->game.floor, data->player.x * 32, data->player.y * 32);
 		data->movements++;
 		data->player.x--;
-		ft_printf("Moves : %d\n", data->movements);
+		ft_printf("\rMoves : %d", data->movements);
+	}
+	else if (data->pars.map_str[data->player.y][data->player.x - 1] == 'E'
+		&& data->collected_coins >= data->coins)
+	{
+		mlx_put_image_to_window(data->game.mlx, data->game.win,
+			data->game.floor, data->player.x * 32, data->player.y * 32);
+		data->movements++;
+		data->player.x--;
+		ft_printf("Moves : %d\r", data->movements);
 	}
 }
 
@@ -44,13 +64,23 @@ void	s_key(t_data *data)
 {
 	data->player.texture = data->player.down;
 	if (data->player.y < data->pars.height - 1
-		&& data->pars.map_str[data->player.y + 1][data->player.x] != '1')
+		&& data->pars.map_str[data->player.y + 1][data->player.x] != '1'
+		&& data->pars.map_str[data->player.y + 1][data->player.x] != 'E')
 	{
 		mlx_put_image_to_window(data->game.mlx, data->game.win,
 			data->game.floor, data->player.x * 32, data->player.y * 32);
 		data->movements++;
 		data->player.y++;
-		ft_printf("Moves : %d\n", data->movements);
+		ft_printf("\rMoves : %d", data->movements);
+	}
+	else if (data->pars.map_str[data->player.y + 1][data->player.x] == 'E'
+		&& data->collected_coins >= data->coins)
+	{
+		mlx_put_image_to_window(data->game.mlx, data->game.win,
+			data->game.floor, data->player.x * 32, data->player.y * 32);
+		data->movements++;
+		data->player.y++;
+		ft_printf("\rMoves : %d", data->movements);
 	}
 }
 
@@ -58,13 +88,23 @@ void	d_key(t_data *data)
 {
 	data->player.texture = data->player.right;
 	if (data->player.x < data->pars.width - 1
-		&& data->pars.map_str[data->player.y][data->player.x + 1] != '1')
+		&& data->pars.map_str[data->player.y][data->player.x + 1] != '1'
+		&& data->pars.map_str[data->player.y][data->player.x + 1] != 'E')
 	{
 		mlx_put_image_to_window(data->game.mlx, data->game.win,
 			data->game.floor, data->player.x * 32, data->player.y * 32);
 		data->movements++;
 		data->player.x++;
-		ft_printf("Moves : %d\n", data->movements);
+		ft_printf("\rMoves : %d", data->movements);
+	}
+	else if (data->pars.map_str[data->player.y][data->player.x + 1] == 'E'
+		&& data->collected_coins >= data->coins)
+	{
+		mlx_put_image_to_window(data->game.mlx, data->game.win,
+			data->game.floor, data->player.x * 32, data->player.y * 32);
+		data->movements++;
+		data->player.x++;
+		ft_printf("\rMoves : %d", data->movements);
 	}
 }
 

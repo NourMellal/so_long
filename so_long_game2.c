@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:44:57 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/13 13:49:55 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/14 17:56:25 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	define_textures2(t_data *data)
 	data->game.coin = mlx_xpm_file_to_image(data->game.mlx, "./imgs/Coin2.xpm",
 			&height, &width);
 	data->game.floor = mlx_xpm_file_to_image(data->game.mlx, "./imgs/black.xpm",
+			&height, &width);
+	data->game.moves = mlx_xpm_file_to_image(data->game.mlx, "./imgs/move.xpm",
 			&height, &width);
 }
 

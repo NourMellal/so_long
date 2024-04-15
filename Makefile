@@ -2,7 +2,7 @@
 CC = cc
 
 # Define any compile-time flags
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 
 # Define the directory containing the libft library
 LIBFT_DIR = ./libft
