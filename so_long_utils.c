@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 23:39:00 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/20 18:23:27 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/20 19:40:27 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,10 @@ void	check_line(t_data *data, char *s, long line)
 		print_err("Error\nInvalid map", data, 1);
 	}
 	data->pars.line_count += 1;
-	if (data->pars.line_count * 30 > MAX_HEIGHT || line * 30 > MAX_WIDTH)
+	if (data->pars.line_count * 32 > MAX_HEIGHT || line * 32 > MAX_WIDTH)
 	{
 		free(s);
 		free(data->pars.filecontent);
-		system("leaks so_long");
 		print_err("Error\nThe map is big try to adjust it", data, 1);
 	}
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:23:40 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/20 17:57:16 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/20 19:20:12 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	get_line(t_data *data)
 	if (s == NULL)
 		print_err("Error\nInvalid map", data, 1);
 	line_check = count_line(s);
+	data->pars.line_count = 1;
 	while (s)
 	{
 		tmp = ft_strjoin(data->pars.filecontent, s);
