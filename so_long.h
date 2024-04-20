@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/20 18:03:48 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/20 19:15:03 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 #  define BUFFER_SIZE 42
 # endif
 
-#define MAX_WIDTH 1920
-#define MAX_HEIGHT 1080
+# define MAX_WIDTH 1920
+# define MAX_HEIGHT 1080
 
 // for mac
 # define KEY_ESC 53

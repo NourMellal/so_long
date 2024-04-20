@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 23:39:00 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/20 18:05:35 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/20 18:23:27 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	check_line(t_data *data, char *s, long line)
 	{
 		free(s);
 		free(data->pars.filecontent);
+		system("leaks so_long");
 		print_err("Error\nThe map is big try to adjust it", data, 1);
 	}
 	i = 0;
