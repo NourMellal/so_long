@@ -31,16 +31,21 @@ int	check_path(char *str)
 	size_t	len;
 	char	*tmp;
 
+	if (str[0] && str[0] == '.')
+		return (0);
+	if (ft_strrchr(str, '/'))
+	{
+		tmp = ft_strrchr(str, '/') + 1;
+		if (tmp[0] && tmp[0] == '.')
+			return (0);
+	}
 	tmp = str;
 	len = ft_strlen(str);
 	if (len < 5)
 		return (0);
 	tmp += len - 4;
 	if (strcmp(".ber", tmp) == 0)
-	{
-		if (str[len - 5] && str[len - 5] != '/')
-			return (1);
-	}
+		return (1);
 	return (0);
 }
 
