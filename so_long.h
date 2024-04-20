@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:47:48 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/14 17:56:29 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/20 18:03:48 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+#define MAX_WIDTH 1920
+#define MAX_HEIGHT 1080
 
 // for mac
 # define KEY_ESC 53
@@ -72,7 +75,7 @@ typedef struct s_pars
 {
 	int			width;
 	int			height;
-	int			line_count;
+	long		line_count;
 	char		*filecontent;
 	char		**map_str;
 	char		**map_copy;
@@ -114,7 +117,7 @@ void			check_for_err(int ac, char **av);
 void			print_error_file(void);
 void			print_err(char *err_type, t_data *data, int print_err);
 int				count_strs(char **strs);
-void			check_line(t_data *data, char *s, int line);
+void			check_line(t_data *data, char *s, long line);
 void			get_line(t_data *data);
 void			collect_data(t_data *data, char byte);
 void			check_data(t_data *data);

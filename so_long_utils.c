@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 23:39:00 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/13 12:49:14 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/20 18:05:35 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	collect_data(t_data *data, char byte)
 		data->exits += 1;
 }
 
-void	check_line(t_data *data, char *s, int line)
+void	check_line(t_data *data, char *s, long line)
 {
 	int	i;
 
@@ -42,6 +42,12 @@ void	check_line(t_data *data, char *s, int line)
 		print_err("Error\nInvalid map", data, 1);
 	}
 	data->pars.line_count += 1;
+	if (data->pars.line_count * 30 > MAX_HEIGHT || line * 30 > MAX_WIDTH)
+	{
+		free(s);
+		free(data->pars.filecontent);
+		print_err("Error\nThe map is big try to adjust it", data, 1);
+	}
 	i = 0;
 	while (s[i] && i[s] != '\n')
 		i++;

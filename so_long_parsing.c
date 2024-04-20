@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_parsing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:23:40 by nmellal           #+#    #+#             */
-/*   Updated: 2024/04/13 12:48:57 by nmellal          ###   ########.fr       */
+/*   Updated: 2024/04/20 17:57:16 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	get_line(t_data *data)
 {
-	char	*s;
-	char	*tmp;
-	int		line_check;
+	char		*s;
+	char		*tmp;
+	long		line_check;
 
 	s = get_next_line(data->fd);
 	if (s == NULL)
