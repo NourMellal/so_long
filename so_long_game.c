@@ -25,7 +25,7 @@ void	check_player_postion(t_data *data)
 		mlx_destroy_window(data->game.mlx, data->game.win);
 		free_2d_maps(data->pars.map_str);
 		free(data->game.mlx);
-		ft_printf("\nYou won\n");
+		ft_printf("You won\n");
 		exit(0);
 	}
 }
